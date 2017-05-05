@@ -17,6 +17,12 @@ class chromePage:
 	self.ws = websocket.WebSocket()
 	self.ws.connect(self.wsurl)
 
+    def pTiming(self):
+	self.ws.send('{"id": 1, "method": "Runtime.evaluate", "params": {"expression":"window.performance.timing", "includeCommandLineAPI": true, "returnByValue": true}}')
+	result = self.ws.recv()
+	# print result
+	return result
+
     def navigate(self,url):
 	self.ws.send('{"id": 1, "method": "Page.navigate", "params": {"url": "'+url+'"}}')
 
