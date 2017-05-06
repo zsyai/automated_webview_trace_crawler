@@ -33,6 +33,7 @@ while True:
 
 		print "installing"
 		os.popen("adb install ./ApkRepo/"+apk+" 2>/dev/null")
+		os.popen("adb kill-all")
 		print "clear logcat"
 		os.system("adb logcat -c")
 		time.sleep(1)
@@ -50,6 +51,7 @@ while True:
 		# raw_input()
 		hunter = webviewHunter()
 		hunter.hunt()
+		time.sleep(1)
 
 		os.system('rm -rf ./TrafficTrace/'+apk_name)
 		os.system('mkdir ./TrafficTrace/'+apk_name)
@@ -68,6 +70,8 @@ while True:
 		webtiming = cp.pTiming()
 		log = timeLog()
 		timeLine = log.readLog("./TrafficTrace/"+apk_name, webtiming)
+		url = cp.getURL()
+		print 'url = ', url
 
 		#first visit
 		print "first visit"

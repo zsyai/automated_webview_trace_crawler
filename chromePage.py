@@ -5,6 +5,7 @@ import websocket
 import time
 import threading
 import select
+import json
 
 class chromePage:
     def __init__(self):
@@ -22,6 +23,14 @@ class chromePage:
 	result = self.ws.recv()
 	# print result
 	return result
+
+    def getURL(self):
+	self.ws.send('{"id": 1, "method": "DOM.getDocument"}')
+	response = self.ws.recv()
+	result = json.loads(response)
+	result = result["result"]
+	root = result["root"]
+	return root["documentURL"]
 
     def navigate(self,url):
 	self.ws.send('{"id": 1, "method": "Page.navigate", "params": {"url": "'+url+'"}}')
