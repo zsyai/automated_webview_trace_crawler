@@ -17,21 +17,23 @@ os.popen("adb shell am start -n "+apk_entry)
 
 # raw_input()
 hunter = webviewHunter()
-hunter.hunt()
+flag = hunter.hunt()
+if flag == 1:
+	process = Popen("adb logcat -v time -s ActivityManager >./log.txt", shell= True)
+	time.sleep(1)
+	process.send_signal(2)
+	# pscshot.send_signal(2)
+	time.sleep(1)
 
-process = Popen("adb logcat -v time -s ActivityManager >./log.txt", shell= True)
-time.sleep(1)
-process.send_signal(2)
-# pscshot.send_signal(2)
-time.sleep(1)
+	# os.popen("adb pull /sdcard/test.mp4")
 
-# os.popen("adb pull /sdcard/test.mp4")
-
-cp = chromePage()
-webtiming = cp.pTiming()
-# print webtiming
-log = timeLog()
-timeline = log.readLog(".", webtiming)
-print timeline
+	cp = chromePage()
+	webtiming = cp.pTiming()
+	# print webtiming
+	log = timeLog()
+	timeline = log.readLog(".", webtiming)
+	print timeline
+	url = cp.getURL()
+	print url
 
 os.popen("adb shell am force-stop "+apk_name)
