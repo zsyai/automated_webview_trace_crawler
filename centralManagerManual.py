@@ -48,9 +48,10 @@ while True:
 		#replay
 		# os.system("adb shell am instrument -e target "+apk+" -e task replay -w com.liang.simpleappcrawler.test/android.support.test.runner.AndroidJUnitRunner")
 
-		# raw_input()
-		hunter = webviewHunter()
-		flag = hunter.hunt()
+		raw_input()
+		# hunter = webviewHunter()
+		# flag = hunter.hunt()
+		flag = 1
 
 		if flag == 1:
 			time.sleep(1)
@@ -90,7 +91,7 @@ while True:
 
 		else:
 			pscshot.send_signal(2)
-			
+
 		print "force-stop"
 		os.popen("adb shell am force-stop "+apk_name)
 		print "uninstalling"

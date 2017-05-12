@@ -37,7 +37,6 @@ class timeLog:
 							during = log.replace('\n','').replace('\r', '')
 							during = during.replace('+', '').replace('ms', '')
 							if during.find('s') > 0:
-								print 'hhhhhh'
 								during = during.replace('s', '.')
 								during = float(during)
 							else:

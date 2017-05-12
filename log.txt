@@ -1,0 +1,3 @@
+--------- beginning of /dev/log/main
+--------- beginning of /dev/log/system
+05-07 12:28:10.695 I/ActivityManager(  554): START u0 {flg=0x10000000 cmp=viva.reader/.activity.GuidanceExActivity} from pid 10104

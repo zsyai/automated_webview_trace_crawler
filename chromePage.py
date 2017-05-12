@@ -10,11 +10,19 @@ import json
 class chromePage:
     def __init__(self):
 	rt = os.popen('adb shell grep -a webview_devtools_remote /proc/net/unix').readlines()
-	self.remoteport = rt[-1].replace('\r','').replace('\n','').split('_')[-1]
-	self.localport = str(9222)
-	os.system('adb forward tcp:'+self.localport+' localabstract:webview_devtools_remote_'+self.remoteport)
-	rt = urllib2.urlopen('http://localhost:'+self.localport+"/json", timeout=1000).read()
-	self.wsurl = json.loads(rt)[-1]['webSocketDebuggerUrl']
+	index = len(rt) - 1
+	portindex = 9222
+	while index >= 0:
+		self.remoteport = rt[index].replace('\r','').replace('\n','').split('_')[-1]
+		self.localport = str(portindex)
+		os.system('adb forward tcp:'+self.localport+' localabstract:webview_devtools_remote_'+self.remoteport)
+		rtt = urllib2.urlopen('http://localhost:'+self.localport+"/json", timeout=1000).read()
+		rtjson = json.loads(rtt)
+		if len(rtjson) > 0:
+			break
+		index = index - 1
+		portindex = portindex + 1
+	self.wsurl = rtjson[-1]['webSocketDebuggerUrl']
 	self.ws = websocket.WebSocket()
 	self.ws.connect(self.wsurl)
 
@@ -73,7 +81,7 @@ class chromePage:
 	    f2 = open(path+'_'+requestid, 'w')
 	    f2.write(self.ws.recv())
 	    f2.close()
-	f.close
+	f.close()
 	
 	
 #a = chromePage()
