@@ -14,16 +14,18 @@ from installer import *
 # apk_name = "ctrip.android.view"
 # apk_entry = "viva.reader/.activity.GuidanceExActivity"
 # apk_name = "viva.reader"
+# apk_entry = "com.ss.android.article.news/.activity.MainActivity"
+# apk_name = "com.ss.android.article.news"
 ins = installer()
 (apk_name, apk_entry, apk_package) = ins.getCurApp()
 
 print 'clear logcat'
 os.system("adb logcat -c")
 time.sleep(2)
-print 'start screenrecording'
-pscshot = Popen("adb shell screenrecord --time-limit 120 /sdcard/test.mp4", shell= True)
 print 'start app'
 os.popen("adb shell am start -n "+apk_entry)
+print 'start screenrecording'
+pscshot = Popen("adb shell screenrecord --size 480x640 --bit-rate 1000000 /sdcard/test.mp4", shell= True)
 
 raw_input()
 
@@ -47,12 +49,13 @@ print "pull screenrecording"
 os.popen("adb pull /sdcard/test.mp4 ./TrafficTrace/"+apk_name)
 
 cp = chromePage()
+print 'start webtiming'
 webtiming = cp.pTiming()
 # print webtiming
 log = timeLog()
 # timeline = log.readLog(".", webtiming)
 timeLine = log.readLog("./TrafficTrace/"+apk_name, webtiming)
-print 'timeLine:', timeline
+print 'timeLine:', timeLine
 url = cp.getURL()
 with open("./TrafficTrace/"+apk_name+"/url.txt", 'w') as f:
 	f.write(url)

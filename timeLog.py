@@ -34,7 +34,7 @@ class timeLog:
 					now = datetime.datetime.strptime('2017-'+onelog[0]+' '+onelog[1],'%Y-%m-%d %H:%M:%S.%f')
 					for log in onelog:
 						if log.find('+') >= 0:
-							during = log.replace('\n','').replace('\r', '')
+							during = log.replace('\n','').replace('\r', '').replace(')','').replace('(','')
 							during = during.replace('+', '').replace('ms', '')
 							if during.find('s') > 0:
 								during = during.replace('s', '.')

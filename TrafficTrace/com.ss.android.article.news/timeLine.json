@@ -1,0 +1,26 @@
+{
+    "times": [
+        {
+            "end": 2.495, 
+            "package": "com.ss.android.article.news", 
+            "start": 0.0, 
+            "activity": "activity.MainActivity", 
+            "fullName": "com.ss.android.article.news/.activity.MainActivity", 
+            "sysDuring": 2.349
+        }, 
+        {
+            "end": 10.28, 
+            "package": "com.ss.android.article.news", 
+            "start": 9.38, 
+            "activity": "com.ss.android.detail.feature.detail2.view.NewDetailActivity", 
+            "fullName": "com.ss.android.article.news/com.ss.android.detail.feature.detail2.view.NewDetailActivity", 
+            "sysDuring": 0.855
+        }, 
+        {
+            "start": 10.623, 
+            "fullName": "WebView", 
+            "end": 11.079, 
+            "sysDuring": 0.456
+        }
+    ]
+}

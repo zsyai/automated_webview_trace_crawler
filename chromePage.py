@@ -18,27 +18,27 @@ class chromePage:
 		os.system('adb forward tcp:'+self.localport+' localabstract:webview_devtools_remote_'+self.remoteport)
 		rtt = urllib2.urlopen('http://localhost:'+self.localport+"/json", timeout=1000).read()
 		rtjson = json.loads(rtt)
+		print rtjson
 		if len(rtjson) > 0:
 			break
 		index = index - 1
 		portindex = portindex + 1
-	self.wsurl = rtjson[-1]['webSocketDebuggerUrl']
-	self.ws = websocket.WebSocket()
-	self.ws.connect(self.wsurl)
+	for tjson in rtjson:
+		if tjson['url'] != '':
+			self.url = tjson['url']
+			self.wsurl = tjson['webSocketDebuggerUrl']
+			self.ws = websocket.WebSocket()
+			self.ws.connect(self.wsurl)
+			break
 
     def pTiming(self):
 	self.ws.send('{"id": 1, "method": "Runtime.evaluate", "params": {"expression":"window.performance.timing", "includeCommandLineAPI": true, "returnByValue": true}}')
 	result = self.ws.recv()
-	# print result
+	print result
 	return result
 
     def getURL(self):
-	self.ws.send('{"id": 1, "method": "DOM.getDocument"}')
-	response = self.ws.recv()
-	result = json.loads(response)
-	result = result["result"]
-	root = result["root"]
-	return root["documentURL"]
+	return self.url
 
     def navigate(self,url):
 	self.ws.send('{"id": 1, "method": "Page.navigate", "params": {"url": "'+url+'"}}')

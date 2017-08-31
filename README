@@ -1,0 +1,16 @@
+1、centralManagerManual.py 和 fullManual.py 都是主程序，二者相差不大，选一即可。
+
+2、流程如下：
+	1）从apklist.txt中读取apk名
+	2）反编译apk获取 package name、entry name 和 app name
+	3）将放在./ApkRepo/中的apk安装到手机上，这个文件夹我这里没有
+	4）清除logcat
+	5）开始录屏
+	6）唤起app
+	7）手动点点点，找到app中有webview的页面，然后随便给个raw_input。这一步本来想用爬虫自动做的，还没弄好…… 半成品代码在webviewHunter.py
+	8）获取系统logcat和录屏
+	9）处理log，得到各activity的时间点
+	10）获取第一次Traffic trace，刷新后获取第二次Traffic Trace
+	11）停止、删除app
+
+3、所有结果保存在./TrafficTrace文件夹下

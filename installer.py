@@ -2,6 +2,7 @@ from apkList import *
 from status import *
 from apkDecompiler import *
 from apkRepoMaintainer import *
+import os
 
 class installer:
 	def __init__(self):
@@ -16,10 +17,12 @@ class installer:
 		self.currptr = int(self.status.getcurrptr())
 		print "currptr "+ str(self.currptr)
 		apk = self.apklist[self.currptr]
+		self.apk = apk
 		print "prefeching "+apk
 		self.apkrepomaintainer.prefetch(apk)
-		print "decompiling"
-		#apkdecompiler.apktool(apk)
+		if not os.path.exists('./ApkRepo/'+apk.split('.')[0]):
+			print "decompiling"
+			self.apkdecompiler.apktool(apk)
 		apk_package = self.apkdecompiler.getpackage(apk)
 		apk_entry = self.apkdecompiler.getentry(apk)
 		apk_name = self.apkdecompiler.getname(apk)
@@ -33,7 +36,7 @@ class installer:
 		(apk_name, apk_entry, apk_package) = self.getCurApp()
 
 		print "installing"
-		os.popen("adb install ./ApkRepo/"+apk+" 2>/dev/null")
+		os.popen("adb install ./ApkRepo/"+self.apk+" 2>/dev/null")
 
 		return (apk_name, apk_entry, apk_package)
 

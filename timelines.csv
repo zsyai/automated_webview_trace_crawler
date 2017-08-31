@@ -1,0 +1,6 @@
+apk_name,activity,start,end,has webview,webview start,webview end,url
+com.example.webview,MainActivity,0.0,0.61,yes,1.139,7.443,http://xw.qq.com/index.htm
+com.ss.android.article.news,activity.MainActivity,0.0,2.495,no,,,
+,com.ss.android.detail.feature.detail2.view.NewDetailActivity,9.38,10.28,yes,10.623,11.079,http://m.haiwainet.cn/ttc/3541093/2017/0512/content_30910564_1.html#tt_font=m&tt_daymode=1&tt_image=1&tt_from=app
+ctrip.android.view,splash.CtripSplashActivity,0.0,2.295,no,,,
+,ctrip.android.publicproduct.home.view.CtripHomeActivity,3.47,5.725,yes,6.106,6.245,file:///data/data/ctrip.android.view/app_ctripwebapp_702.000/advertisement/index.html?SystemCode=32&ScreenWidth=720&ScreenHeight=1280&AppVersion=7.2.0&OSVersion=Android_4.4.4&ScreenPxDensity=2.0&BizType=0&PageCode=1&TraceName=home&AdvWidth=720&AdvHeight=222&ChannelID=8019&ClientID=32001174110015575769

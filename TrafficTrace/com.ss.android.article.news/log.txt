@@ -1,0 +1,35 @@
+--------- beginning of /dev/log/main
+--------- beginning of /dev/log/system
+05-12 17:41:35.796 I/ActivityManager( 6429): START u0 {flg=0x10000000 cmp=com.ss.android.article.news/.activity.MainActivity} from pid 5834
+05-12 17:41:35.951 I/ActivityManager( 6429): Start proc com.ss.android.article.news for activity com.ss.android.article.news/.activity.MainActivity: pid=5845 uid=10084 gids={50084, 3003, 1028, 1015, 1006, 3002, 3001}
+05-12 17:41:37.616 I/ActivityManager( 6429): Start proc com.ss.android.article.news:push for service com.ss.android.article.news/com.ss.android.message.log.LogService: pid=5935 uid=10084 gids={50084, 3003, 1028, 1015, 1006, 3002, 3001}
+05-12 17:41:38.291 I/ActivityManager( 6429): Displayed com.ss.android.article.news/.activity.MainActivity: +2s349ms
+05-12 17:41:38.481 I/ActivityManager( 6429): Start proc com.ss.android.article.news:ad for service com.ss.android.article.news/com.ss.android.ad.impl.AdService: pid=5990 uid=10084 gids={50084, 3003, 1028, 1015, 1006, 3002, 3001}
+05-12 17:41:39.871 I/ActivityManager( 6429): Start proc com.ss.android.article.news:pushservice for service com.ss.android.article.news/com.taobao.accs.ChannelService: pid=6074 uid=10084 gids={50084, 3003, 1028, 1015, 1006, 3002, 3001}
+05-12 17:41:41.216 W/ActivityManager( 6429): Unable to start service Intent { pkg=com.ss.android.article.news cmp=com.ss.android.article.news/com.taobao.accs.ChannelService$KernelService } U=0: not found
+05-12 17:41:41.216 W/ActivityManager( 6429): Unable to start service Intent { act=org.rome.android.IPP_CALL pkg=com.eg.android.AlipayGphone cmp=com.eg.android.AlipayGphone/org.rome.android.ipp.binder.IppService (has extras) } U=0: not found
+05-12 17:41:45.176 I/ActivityManager( 6429): START u0 {cmp=com.ss.android.article.news/com.ss.android.detail.feature.detail2.view.NewDetailActivity (has extras)} from pid 5845
+05-12 17:41:46.076 I/ActivityManager( 6429): Displayed com.ss.android.article.news/com.ss.android.detail.feature.detail2.view.NewDetailActivity: +855ms
+05-12 17:42:06.431 I/ActivityManager( 6429): Force stopping com.ss.android.article.news appid=10084 user=0: from pid 6352
+05-12 17:42:06.431 I/ActivityManager( 6429): Killing 5935:com.ss.android.article.news:push/u0a84 (adj 1): stop com.ss.android.article.news
+05-12 17:42:06.431 W/ActivityManager( 6429): Scheduling restart of crashed service com.ss.android.article.news/com.ss.android.message.NotifyService in 43920ms
+05-12 17:42:06.431 W/ActivityManager( 6429): Scheduling restart of crashed service com.ss.android.article.news/com.bytedance.common.wschannel.server.WsChannelService in 83920ms
+05-12 17:42:06.431 I/ActivityManager( 6429): Killing 5845:com.ss.android.article.news/u0a84 (adj 0): stop com.ss.android.article.news
+05-12 17:42:06.436 W/ActivityManager( 6429): Scheduling restart of crashed service com.ss.android.article.news/com.taobao.accs.data.MsgDistributeService in 1000ms
+05-12 17:42:06.441 W/ActivityManager( 6429): Force removing ActivityRecord{4275b0e8 u0 com.ss.android.article.news/com.ss.android.detail.feature.detail2.view.NewDetailActivity t322}: app died, no saved state
+05-12 17:42:06.446 I/ActivityManager( 6429): Killing 5990:com.ss.android.article.news:ad/u0a84 (adj 0): stop com.ss.android.article.news
+05-12 17:42:06.446 I/ActivityManager( 6429): Killing 6074:com.ss.android.article.news:pushservice/u0a84 (adj 5): stop com.ss.android.article.news
+05-12 17:42:06.446 W/ActivityManager( 6429): Scheduling restart of crashed service com.ss.android.article.news/com.taobao.accs.ChannelService in 1000ms
+05-12 17:42:06.451 I/ActivityManager( 6429):   Force finishing activity ActivityRecord{41b9c648 u0 com.ss.android.article.news/.activity.MainActivity t322}
+05-12 17:42:06.456 I/ActivityManager( 6429):   Force stopping service ServiceRecord{422a6648 u0 com.ss.android.article.news/com.ss.android.message.NotifyService}
+05-12 17:42:06.456 I/ActivityManager( 6429):   Force stopping service ServiceRecord{41c92eb0 u0 com.ss.android.article.news/com.bytedance.common.wschannel.server.WsChannelService}
+05-12 17:42:10.611 I/ActivityManager( 6429): START u0 {flg=0x10000000 cmp=com.kingroot.kinguser/.activitys.SuNotifyActivity} from pid 6388
+05-12 17:43:20.311 I/ActivityManager( 6429): Waited long enough for: ServiceRecord{42985610 u0 com.google.android.gsf/.checkin.CheckinService}
+05-12 17:45:49.126 I/ActivityManager( 6429): Start proc com.ss.android.article.news:pushservice for service com.ss.android.article.news/com.taobao.accs.ChannelService: pid=7791 uid=10084 gids={50084, 3003, 1028, 1015, 1006, 3002, 3001}
+05-12 17:45:49.421 I/ActivityManager( 6429): Start proc com.ss.android.article.news for content provider com.ss.android.article.news/com.umeng.message.provider.MessageProvider: pid=7809 uid=10084 gids={50084, 3003, 1028, 1015, 1006, 3002, 3001}
+05-12 17:45:50.111 W/ActivityManager( 6429): Unable to start service Intent { act=org.rome.android.IPP_CALL pkg=com.eg.android.AlipayGphone cmp=com.eg.android.AlipayGphone/org.rome.android.ipp.binder.IppService (has extras) } U=0: not found
+05-12 17:45:50.111 W/ActivityManager( 6429): Unable to start service Intent { pkg=com.ss.android.article.news cmp=com.ss.android.article.news/com.taobao.accs.ChannelService$KernelService } U=0: not found
+05-12 17:45:50.471 I/ActivityManager( 6429): Start proc com.ss.android.article.news:push for service com.ss.android.article.news/com.ss.android.message.NotifyService: pid=7945 uid=10084 gids={50084, 3003, 1028, 1015, 1006, 3002, 3001}
+05-12 17:49:07.471 W/ActivityManager( 6429): Unable to start service Intent { act=com.wandoujia.phoenix2.intent.action.COCKROACH flg=0x4 (has extras) } U=0: not found
+05-12 17:49:07.476 W/ActivityManager( 6429): Unable to start service Intent { act=com.alibaba.wireless.intent.action.COCKROACH flg=0x4 (has extras) } U=0: not found
+05-12 17:49:07.501 I/ActivityManager( 6429): Start proc org.mozilla.firefox for service org.mozilla.firefox/org.mozilla.gecko.background.healthreport.upload.HealthReportUploadService: pid=9090 uid=10078 gids={50078, 3003, 1028, 1015, 1006}
